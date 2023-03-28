@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Delete Pokemon</h1>
+    <p>Are you sure you want to delete {{ pokemon.name }}?</p>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="submit" value="Delete">
+    </form>
+{% endblock %}
+
+    <!-- En este código estamos utilizando el mismo archivo base.html 
+        para extender su funcionalidad y agregar la sección de eliminación 
+        de un Pokemon específico. Utilizamos el bloque content para incluir 
+        todo el contenido de la página, y dentro de este bloque mostramos un 
+        título y un mensaje preguntando si el usuario realmente quiere eliminar el Pokemon.
+
+    Luego, creamos un formulario utilizando el método POST que permitirá al 
+    usuario confirmar la eliminación del Pokemon. El token csrf se utiliza 
+    para prevenir ataques de falsificación de solicitud entre sitios (CSRF) 
+    y asegurar que el formulario solo pueda ser enviado por un usuario autenticado.
+
+    Finalmente, incluimos un botón de envío de tipo "submit" para que el usuario pueda 
+    confirmar la eliminación del Pokemon.-->

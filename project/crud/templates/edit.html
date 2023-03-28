@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <!--Dentro del bloque content, creamos un formulario que envía los datos a través 
+        del método POST, y dentro del formulario, cada campo del modelo Pokemon se 
+        representa como un <input> con su valor actual. Al hacer clic en el botón "Save", 
+        los cambios se enviarán al servidor para ser guardados en la base de datos.-->
+  <h1>Edit Pokemon</h1>
+  <form method="post">
+    {% csrf_token %}
+    <!--Es importante incluir el token de seguridad {% csrf_token %} 
+        en el formulario para evitar ataques CSRF.-->
+    <label for="name">Name:</label>
+    <input type="text" name="name" value="{{ pokemon.name }}"><br><br>
+    <label for="type">Type:</label>
+    <input type="text" name="type" value="{{ pokemon.type }}"><br><br>
+    <label for="variable">Variable:</label>
+    <input type="text" name="variable" value="{{ pokemon.variable }}"><br><br>
+    <input type="submit" value="Save">
+  </form>
+{% endblock %}

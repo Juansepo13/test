@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+<!--Hereda de base.html toda la plantilla base -->
+
+{% block content %}
+  <h1>Pokemon Details</h1>
+  <hr>
+  <h3>{{ pokemon.name }}</h3>
+  <p>Type: {{ pokemon.type }}</p>
+  <p>Variable: {{ pokemon.variable }}</p>
+  <p>Description: {{ pokemon.description }}</p>
+{% endblock %}

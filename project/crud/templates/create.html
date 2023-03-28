@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Create new Pokemon</h1>
+    <form method="POST" action="{% url 'create' %}">
+        {% csrf_token %}
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br>
+        <label for="type">Type:</label><br>
+        <input type="text" id="type" name="type" required><br>
+        <label for="variable">Variable:</label><br>
+        <input type="text" id="variable" name="variable" required><br><br>
+        <button type="submit">Create</button>
+    </form>
+{% endblock %}
+
+    <!--En esta plantilla estamos extendiendo la plantilla base base.html 
+        y en el bloque content estamos creando un formulario para crear 
+        nuevos registros de pokémon. En el formulario estamos usando el método POST 
+        y el atributo action para indicar la ruta a la que se debe enviar la información 
+        del formulario cuando se presione el botón "Create". También estamos incluyendo 
+        un token de seguridad CSRF con {% csrf_token %} para proteger el formulario de 
+        ataques CSRF.
+
+        Dentro del formulario, estamos incluyendo campos de entrada para el nombre, 
+        tipo y variable del nuevo pokémon, cada uno con su respectivo label. 
+        Todos los campos son requeridos y se validan con el atributo required. 
+        Finalmente, incluimos un botón para enviar el formulario con el texto "Create".-->
