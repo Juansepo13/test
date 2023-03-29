@@ -1,0 +1,14 @@
+# Virtual Environment
+aen/
+
+# files create for python
+*.pyc
+__pycache__/
+*.pyo
+*.egg-info/
+dist/
+build/
+*.egg
+
+# others files create by django
+*.log
